@@ -40,20 +40,11 @@ builder.Services.AddScoped<IPaymentGateway, StripeGateway>();
 
 builder.Services.AddScoped<IPaymentGatewayFactory, PaymentGatewayFactory>();
 
-//var conn = builder.Configuration.GetConnectionString("DbAddress");
-//builder.Services.AddDbContext<AppDbContext>(options =>
-//    options.UseSqlServer(conn)
-//);
-if (builder.Environment.IsDevelopment())
-{
-    builder.Services.AddDbContext<AppDbContext>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("DbAddress")));
-}
-else
-{
-    builder.Services.AddDbContext<AppDbContext>(options =>
-        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-}
+var conn = builder.Configuration.GetConnectionString("DbAddress");
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(conn)
+);
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", builder =>
