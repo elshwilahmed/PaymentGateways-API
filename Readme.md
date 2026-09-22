@@ -3,7 +3,9 @@
 A robust, scalable payment gateway integration microservice built with **.NET 9.0**. This API handles the complete checkout process and automates order status updates in real-time via Webhooks.
 
 ## Demo Video
-> **Note:** [Drag and Drop your downloaded Loom video here while in GitHub edit mode to embed it]
+>
+
+https://github.com/user-attachments/assets/a1cf6614-47a2-43f2-8bfd-4cb4b152730c
 
 ## Key Features
 - **Real-Time Webhook Processing:** Automatically listens to gateway callbacks to update order statuses (e.g., Pending ➡️ Paid) without manual intervention.
